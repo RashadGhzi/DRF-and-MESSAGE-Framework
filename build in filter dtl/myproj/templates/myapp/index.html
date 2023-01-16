@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Your name is {{name|upper}}</h2>
+    <h2>Language is {{lang|length}}</h2>
+    <h2>Course time {{cors|truncatechars:4}}</h2>
+    <h2>Course time {{cors|truncatewords:1}}</h2>
+    <h2>Date is {{date|date:'DATE_FORMAT'}}</h2>
+    <h2>Date is {{date|date:'DATETIME_FORMAT'}}</h2>
+    <h2>Date is {{date|date:'TIME_FORMAT'}}</h2>
+    <h2>Date is {{date|date:'SHORT_DATETIME_FORMAT'}}</h2>
+
+    {% for key, value in stu.items  %}
+        {{key}}:{{value}} <br>
+    {% for key, value in value.items %}
+        {{key}}:{{value}} <br>
+    {% endfor %}
+    {% endfor %}
+</body>
+</html>
